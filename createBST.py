@@ -18,6 +18,7 @@ def insert(tree, node):
         else:
             insert(tree.left, node)
 
+
 def getKthElement(root,k):
     stack = []
     while root or stack:
@@ -30,11 +31,11 @@ def getKthElement(root,k):
             return root.val
         root = root.right
 
-def inorder(root):
-    if root:
-        inorder(root.left)
-        print(root.val)
-        inorder(root.right)
+def inorder(tree):
+    if tree:
+        inorder(tree.left)
+        print(tree.val)
+        inorder(tree.right)
 
 if __name__ == '__main__':
     root = TreeNode(6)
@@ -46,4 +47,5 @@ if __name__ == '__main__':
     insert(root,TreeNode(8))
     insert(root,TreeNode(3))
     insert(root,TreeNode(9))
-    inorder(root)
+    # inorder(root)
+    print(getKthElement(root,7))
